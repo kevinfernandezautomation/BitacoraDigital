@@ -1,0 +1,8 @@
+import {test,expect} from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+const base=process.env.FULLSTACK_URL, password=process.env.TEST_LOGIN_PASSWORD, id=process.env.TEST_CLOSED_SHEET_ID;
+test.skip(!base||!password||!id,'Configurar hoja cerrada del qa_regente');
+async function login(page:any,role:string){await page.goto(base+'/login/');await page.locator('#id_username').fill('qa_'+role);await page.locator('#id_password').fill(password!);await page.getByRole('button',{name:'Ingresar'}).click();}
+test('formulario responsive y accesible',async({page})=>{await login(page,'regente');await page.setViewportSize({width:320,height:720});await page.goto(`${base}/sheet/${id}/email/`);await expect(page.getByRole('heading',{name:'Enviar hoja cerrada por correo'})).toBeVisible();expect(await page.locator('#delivery').evaluate(e=>e.scrollWidth<=e.clientWidth+1)).toBeTruthy();expect((await new AxeBuilder({page}).include('#delivery').withTags(['wcag2a','wcag2aa','wcag21aa']).analyze()).violations).toEqual([]);});
+test('administrador sin permiso',async({page})=>{await login(page,'admin');expect((await page.request.get(`${base}/sheet/${id}/email/`)).status()).toBe(403);});
+test('confirmación discrepante',async({page})=>{await login(page,'regente');await page.goto(`${base}/sheet/${id}/email/`);await page.getByLabel('Correo destinatario',{exact:true}).fill('qa@example.org');await page.getByLabel('Repita el correo destinatario').fill('other@example.org');await page.getByRole('checkbox').check();await page.getByRole('button',{name:'Confirmar envío'}).click();await expect(page.getByText('Los correos deben coincidir.')).toBeVisible();});

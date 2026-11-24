@@ -1,0 +1,13 @@
+ID,Escenario,Resultado esperado,Automatización
+TAR-001,Asignar y actualizar,Hoja y firma intactas,Django y Playwright
+TAR-002,Borrador,403,Django
+TAR-003,Datos inválidos y destinatario ajeno,400,Django
+TAR-004,Usuario ajeno,404,Django
+TAR-005,Empresa asigna al regente,302,Django
+TAR-006,Transición desactualizada,409,Django
+TAR-007,Usuario no responsable cambia estado,403,Django
+TAR-008,CSRF,403,Django y Playwright
+TAR-009,Panel personal,Filtrado por estado,Playwright
+TAR-010,Responsive y accesibilidad,Sin desbordamiento ni infracciones detectadas,Playwright
+TAR-011,Consulta bajo carga,p95 inferior a 2 segundos,k6
+TAR-012,SQL modifica asignación o elimina evento,Rechazo,Manual PostgreSQL

@@ -1,0 +1,11 @@
+env:
+  contexts:
+  - name: local
+    urls: [http://web:8000]
+jobs:
+- type: spider
+  parameters: {context: local, maxDuration: 2}
+- type: passiveScan-wait
+  parameters: {maxDuration: 5}
+- type: report
+  parameters: {template: traditional-html, reportDir: /zap/wrk, reportFile: zap-report}

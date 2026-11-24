@@ -1,0 +1,15 @@
+ID,Escenario,Resultado esperado,Automatización
+COR-001,Envío externo simulado,ZIP con firma y digest intacto,Django
+COR-002,Repetir token,409 sin duplicado,Django
+COR-003,Borrador,404,Django
+COR-004,Roles ajenos,403 o 404,Django y Playwright
+COR-005,Correos discrepantes o falta consentimiento,400,Django y Playwright
+COR-006,Sin CSRF,403,Django
+COR-007,Timeout SMTP,Estado incierto,Django
+COR-008,Exceso de tamaño,413,Django
+COR-009,Límite horario,429,Django
+COR-010,Ruta anterior,403,Django
+COR-011,Responsive y accesibilidad,Sin desbordamiento ni infracciones detectadas,Playwright
+COR-012,Consulta bajo carga,p95 inferior a 2 segundos,k6
+COR-013,Manipulación SQL,Rechazo por trigger,Manual PostgreSQL
+COR-014,Recepción SMTP real y rebotes,Validación en entorno controlado,Pendiente

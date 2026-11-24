@@ -1,0 +1,12 @@
+ID,Escenario,Resultado esperado,Automatización,Estado
+COM-001,Publicación por roles autorizados,Comentario independiente y firma intacta,test_comments.py / comments.spec.ts,No ejecutado
+COM-002,Comentario en borrador,403,test_comments.py,No ejecutado
+COM-003,Vacío y límites 4000 y 4001,400 o 302 según caso,test_comments.py,No ejecutado
+COM-004,Usuario ajeno o soporte,404,test_comments.py,No ejecutado
+COM-005,XSS,Texto escapado,test_comments.py,No ejecutado
+COM-006,Sin CSRF,403,test_comments.py / comments.spec.ts,No ejecutado
+COM-007,Paginación 26 comentarios,25 y 1,test_comments.py,No ejecutado
+COM-008,Responsive 320px,Sin desbordamiento,comments.spec.ts,No ejecutado
+COM-009,Accesibilidad,Sin infracciones automatizables,comments.spec.ts,No ejecutado
+COM-010,Rendimiento consulta,p95 menor a 2 segundos,comments.js,No ejecutado
+COM-011,UPDATE DELETE SQL,Trigger rechaza,Manual PostgreSQL,No ejecutado

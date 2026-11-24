@@ -1,0 +1,13 @@
+ID,Escenario,Esperado,Automatizacion
+REP-001,Roles en consulta y CSV,Admin y fiscalia autorizados,Django
+REP-002,Fechas inclusivas y hojas duplicadas por dia,Un dia y dos hojas,Django
+REP-003,Regencia sin registros,Incluida con cero,Django
+REP-004,Borradores excluidos,No visibles,Django
+REP-005,Fechas invalidas,HTTP 400,Django
+REP-006,Exportacion filtrada y formula CSV,Texto neutralizado,Django
+REP-007,Regencia suspendida,Historico accesible,Django
+REP-008,Intentos de modificacion administrativa,HTTP 403 o 405,Django
+REP-009,Filtros y exportacion web,CSV disponible,Playwright
+REP-010,Empresa sin acceso,HTTP 403,Playwright
+REP-011,Responsive y accesibilidad,Sin desbordamiento ni infracciones automatizables,Playwright
+REP-012,Consulta bajo carga,p95 menor a 2 segundos,k6

@@ -1,0 +1,14 @@
+ID,Escenario,Esperado,Automatización,Estado
+BOR-001,Crear editar cerrar comentar,Contenido cerrado y comentario separado,e2e/drafts.spec.ts,No ejecutado
+BOR-002,Cierre sin confirmación,HTTP 400,core/test_drafts.py,No ejecutado
+BOR-003,Mutaciones posteriores al cierre,HTTP 403,core/test_drafts.py,No ejecutado
+BOR-004,Empresa intenta comentar borrador,HTTP 404,core/test_drafts.py,No ejecutado
+BOR-005,PDF falso,HTTP 400,core/test_drafts.py,No ejecutado
+BOR-006,Edición obsoleta,No sobrescribe,core/test_drafts.py,No ejecutado
+BOR-007,Responsive 320 768 1280,Sin desbordamiento,e2e/drafts.spec.ts,No ejecutado
+BOR-008,Accesibilidad,Sin infracciones automatizadas,e2e/drafts.spec.ts,No ejecutado
+BOR-009,CSRF,HTTP 403,e2e/drafts.spec.ts,No ejecutado
+BOR-010,Rendimiento repositorio,p95 menor a 2 segundos,tests/performance/drafts.js,No ejecutado
+BOR-011,Filtro fecha personas etiquetas,Resultados correctos,Manual,No ejecutado
+BOR-012,Adjuntos acumulados superiores a 25 MiB,Rechazo,Manual,No ejecutado
+BOR-013,Mutación SQL de hoja cerrada,Trigger rechaza,Manual PostgreSQL,No ejecutado

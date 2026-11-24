@@ -1,0 +1,11 @@
+ID,Escenario,Resultado,Tipo
+SEC-001,Cambio propio válido,Hash Argon2 y sesión propia conservada,Django
+SEC-002,Acceso empresa después del cambio,Hoja histórica disponible,Django
+SEC-003,Otra sesión del regente,Invalidada,Django
+SEC-004,Contraseña anterior incorrecta,Sin cambio,Django
+SEC-005,Cambio sin CSRF,403,Django
+SEC-006,Cabeceras CSP y caché,Presentes,Django
+SEC-007,TLS 1.0 y 1.1,Conexión rechazada,Infraestructura
+SEC-008,Puertos DB y web desde cliente,No publicados,Infraestructura
+SEC-009,Acceso directo a adjuntos privados,Denegado,Integración
+SEC-010,Restauración de respaldo,Integridad verificada,Manual

@@ -1,0 +1,43 @@
+# Standalone private deployment template; do not merge with development compose.
+services:
+  db:
+    image: postgres:16
+    env_file: .env
+    volumes: [pgdata:/var/lib/postgresql/data]
+    networks: [data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  web:
+    build: backend
+    env_file: .env
+    environment:
+      DEBUG: '0'
+      TRUST_TLS_PROXY: '1'
+      ALLOW_UNSIGNED_CLOSE: '0'
+    command: [sh, -c, 'python manage.py collectstatic --noinput && gunicorn --bind 0.0.0.0:8000 --workers 2 settings_wsgi:application']
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes: [media:/app/private, static:/app/collected]
+    networks: [data, edge]
+  gateway:
+    image: nginx:stable-alpine
+    ports: ['${PRIVATE_BIND_IP:?set private interface IP}:443:443']
+    volumes:
+      - ./infrastructure/nginx/site.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./infrastructure/nginx/proxy-ciqpa.conf:/etc/nginx/proxy-ciqpa.conf:ro
+      - ./tls:/etc/nginx/tls:ro
+      - static:/srv/static:ro
+    networks: [edge]
+    depends_on: [web]
+networks:
+  data:
+    internal: true
+  edge: {}
+volumes:
+  pgdata: {}
+  media: {}
+  static: {}

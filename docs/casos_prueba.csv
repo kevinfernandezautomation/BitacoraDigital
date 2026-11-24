@@ -1,0 +1,43 @@
+﻿ID,Requisito Anexo 2 / mejora,Área,Pasos / escenario,Esperado,Tipo,Script asociado,Estado
+CP-001,Roles / borrador,Consultar borrador,Autenticar como regente; acceder a la ruta del módulo,Acceso permitido,Funcional,core.test_enterprise.EnterpriseTests.test_draft_roles,No ejecutado
+CP-002,Roles / cierre,Consultar hoja cerrada,Autenticar como regente; acceder a la ruta del módulo,Acceso permitido,Funcional,core.test_enterprise.EnterpriseTests.test_closed_roles,No ejecutado
+CP-003,Fiscalización,Consultar reportes,Autenticar como regente; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_reports_roles,No ejecutado
+CP-004,Seguridad,Consultar auditoría,Autenticar como regente; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_audit_roles,No ejecutado
+CP-005,Roles / borrador,Consultar borrador,Autenticar como empresa; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_draft_roles,No ejecutado
+CP-006,Roles / cierre,Consultar hoja cerrada,Autenticar como empresa; acceder a la ruta del módulo,Acceso permitido,Funcional,core.test_enterprise.EnterpriseTests.test_closed_roles,No ejecutado
+CP-007,Fiscalización,Consultar reportes,Autenticar como empresa; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_reports_roles,No ejecutado
+CP-008,Seguridad,Consultar auditoría,Autenticar como empresa; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_audit_roles,No ejecutado
+CP-009,Roles / borrador,Consultar borrador,Autenticar como admin; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_draft_roles,No ejecutado
+CP-010,Roles / cierre,Consultar hoja cerrada,Autenticar como admin; acceder a la ruta del módulo,Acceso permitido,Funcional,core.test_enterprise.EnterpriseTests.test_closed_roles,No ejecutado
+CP-011,Fiscalización,Consultar reportes,Autenticar como admin; acceder a la ruta del módulo,Acceso permitido,Funcional,core.test_enterprise.EnterpriseTests.test_reports_roles,No ejecutado
+CP-012,Seguridad,Consultar auditoría,Autenticar como admin; acceder a la ruta del módulo,Acceso permitido,Funcional,core.test_enterprise.EnterpriseTests.test_audit_roles,No ejecutado
+CP-013,Roles / borrador,Consultar borrador,Autenticar como fiscalia; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_draft_roles,No ejecutado
+CP-014,Roles / cierre,Consultar hoja cerrada,Autenticar como fiscalia; acceder a la ruta del módulo,Acceso permitido,Funcional,core.test_enterprise.EnterpriseTests.test_closed_roles,No ejecutado
+CP-015,Fiscalización,Consultar reportes,Autenticar como fiscalia; acceder a la ruta del módulo,Acceso permitido,Funcional,core.test_enterprise.EnterpriseTests.test_reports_roles,No ejecutado
+CP-016,Seguridad,Consultar auditoría,Autenticar como fiscalia; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_audit_roles,No ejecutado
+CP-017,Roles / borrador,Consultar borrador,Autenticar como soporte; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_draft_roles,No ejecutado
+CP-018,Roles / cierre,Consultar hoja cerrada,Autenticar como soporte; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_closed_roles,No ejecutado
+CP-019,Fiscalización,Consultar reportes,Autenticar como soporte; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_reports_roles,No ejecutado
+CP-020,Seguridad,Consultar auditoría,Autenticar como soporte; acceder a la ruta del módulo,Acceso denegado,Funcional,core.test_enterprise.EnterpriseTests.test_audit_roles,No ejecutado
+CP-021,Cierre,Cierre,Cerrar borrador propio,Hoja cerrada e inalterable,Funcional,core.tests.Permissions.test_close,No ejecutado
+CP-022,Aislamiento,Aislamiento,Empresa ajena consulta hoja,404,Funcional,core.tests.Permissions.test_isolation,No ejecutado
+CP-023,Recibido,Recibido,Enviar recibido dos veces,Un solo registro,Funcional,test_receipt_idempotent,No ejecutado
+CP-024,Comentarios,Comentarios,Comentar hoja cerrada,Hash sin cambios,Funcional,test_comments_do_not_change_digest,No ejecutado
+CP-025,Adjuntos,Adjuntos,Enviar archivo vacío,400,Funcional,test_empty_attachment,No ejecutado
+CP-026,Morosidad,Morosidad,Regente suspendido intenta cerrar,403,Funcional,test_suspended_owner,No ejecutado
+CP-027,Firma,Firma,Cerrar sin integración en modo seguro,503,Funcional,test_production_blocks_unsigned,No ejecutado
+CP-028,Integridad,Integridad,Verificar hoja cerrada,Hash válido,Funcional,test_integrity,No ejecutado
+CP-029,Interfaz web,Compatibilidad,Abrir demo a 360px,Sin desplazamiento horizontal,No funcional,e2e/quality.spec.ts,No ejecutado
+CP-030,Interfaz web,Compatibilidad,Abrir demo a 768px,Sin desplazamiento horizontal,No funcional,e2e/quality.spec.ts,No ejecutado
+CP-031,Interfaz web,Compatibilidad,Abrir demo a 1280px,Sin desplazamiento horizontal,No funcional,e2e/quality.spec.ts,No ejecutado
+CP-032,Seguridad,Accesibilidad,Ejecutar axe en demo,Sin violaciones detectadas,No funcional,e2e/quality.spec.ts,No ejecutado
+CP-033,Seguridad,Rendimiento,10 usuarios durante 30 segundos en login,p95 < 2s; errores < 1%,No funcional,tests/performance/load.js,No ejecutado
+CP-034,Firma,Firma,Firmar con certificado personal válido,Validación independiente PAdES,Manual / integración,Pendiente,No ejecutado
+CP-035,Firma,Firma,Certificado revocado,Rechazar firma,Manual / integración,Pendiente,No ejecutado
+CP-036,MFA,MFA,Código incorrecto,Denegar acceso,Manual / integración,Pendiente,No ejecutado
+CP-037,Recuperación,Recuperación,Restaurar base y adjuntos,Integridad y RPO/RTO acordados,Manual / integración,Pendiente,No ejecutado
+CP-038,Adjuntos,Adjuntos,Archivo con contenido malicioso,Rechazar,Manual / integración,Pendiente,No ejecutado
+CP-039,Seguridad,Seguridad,Modificar hoja cerrada mediante SQL,Trigger rechaza,Manual / integración,Pendiente,No ejecutado
+CP-040,Disponibilidad,Disponibilidad,Simular pérdida de nodo,Recuperación dentro del SLA,Manual / integración,Pendiente,No ejecutado
+CP-041,Correo,Correo,Enviar hoja cerrada,Entrega y trazabilidad,Manual / integración,Pendiente,No ejecutado
+CP-042,Carga masiva,Carga masiva,Importar CSV con duplicados,Validación sin duplicados,Manual / integración,Pendiente,No ejecutado

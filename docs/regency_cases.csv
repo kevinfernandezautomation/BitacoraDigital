@@ -1,0 +1,17 @@
+﻿ID,Escenario,Esperado,Script,Estado
+REG-001,Solicitud completa,Estado solicitada,core/test_regency.py,No ejecutado
+REG-002,Aprobación,Habilita hoja,core/test_regency.py,No ejecutado
+REG-003,Antes de aprobación,403,core/test_regency.py,No ejecutado
+REG-004,Otro regente,404,core/test_regency.py,No ejecutado
+REG-005,Aprobación por regente,403,core/test_regency.py,No ejecutado
+REG-006,Horas 0 o 169,Rechazo,core/test_regency.py,No ejecutado
+REG-007,Correo inválido,Rechazo,core/test_regency.py,No ejecutado
+REG-008,PDF falso,Rechazo,core/test_regency.py,No ejecutado
+REG-009,Sin confirmación,400,core/test_regency.py,No ejecutado
+REG-010,Doble aprobación,409,core/test_regency.py,No ejecutado
+REG-011,Observación y reenvío,Solicitada,core/test_regency.py,No ejecutado
+REG-012,Empresa solicita,403,e2e/regency.spec.ts,No ejecutado
+REG-013,Sin CSRF,403,e2e/regency.spec.ts,No ejecutado
+REG-014,Responsive,Sin desbordamiento,e2e/regency.spec.ts,No ejecutado
+REG-015,Accesibilidad,Sin hallazgos axe,e2e/regency.spec.ts,No ejecutado
+REG-016,Carga de consulta,p95 < 2s,tests/performance/regency.js,No ejecutado

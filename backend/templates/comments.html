@@ -1,0 +1,8 @@
+<section id="comentarios" class="margin-comments" aria-labelledby="comments-title">
+<h2 id="comments-title">Comentarios al margen</h2>
+<p>Las observaciones son independientes de la hoja cerrada. No modifican su contenido, adjuntos ni firma. Una vez publicados, los comentarios no se editan ni eliminan.</p>
+<p>{{ comments_page.paginator.count }} comentarios</p>
+{% for c in comments_page %}<article class="margin-comment"><header><strong>{{ c.author.username }}</strong> · <time datetime="{{ c.created|date:'c' }}">{{ c.created|date:'d/m/Y H:i:s' }}</time></header><p class="comment-body">{{ c.body }}</p></article>{% empty %}<p>Aún no hay comentarios.</p>{% endfor %}
+<nav aria-label="Páginas de comentarios">{% if comments_page.has_previous %}<a href="?comments_page={{ comments_page.previous_page_number }}#comentarios">Anterior</a>{% endif %} Página {{ comments_page.number }} de {{ comments_page.paginator.num_pages }} {% if comments_page.has_next %}<a href="?comments_page={{ comments_page.next_page_number }}#comentarios">Siguiente</a>{% endif %}</nav>
+<form method="post" action="action/">{% csrf_token %}{{ comment_form.as_p }}<p>Máximo 4000 caracteres. No incluya información ajena a la visita.</p><button name="action" value="comment">Publicar comentario</button></form>
+</section>

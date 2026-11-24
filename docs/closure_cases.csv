@@ -1,0 +1,8 @@
+ID,Escenario,Esperado,Automatizacion,Estado
+CIE-001,Cierre y expediente,Archivo verificable,core.test_closure y closure.spec.ts,No ejecutado
+CIE-002,Cierre duplicado,403 y un archivo,core.test_closure,No ejecutado
+CIE-003,Regente ajeno,404,core.test_closure,No ejecutado
+CIE-004,Firma no configurada,503 y borrador intacto,core.test_closure,No ejecutado
+CIE-005,Verificacion bajo carga,p95 menor a 2 segundos,k6 closure.js,No ejecutado
+CIE-006,Alteracion SQL,Trigger rechaza,Manual PostgreSQL,No ejecutado
+CIE-007,Firma personal certificada,Validacion cadena y revocacion,Pendiente integracion,No ejecutado

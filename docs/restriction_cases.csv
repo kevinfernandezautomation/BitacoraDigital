@@ -1,0 +1,10 @@
+ID,Escenario,Esperado
+SUS-001,Administrador crea restricción,Vigente
+SUS-002,Regente intenta crear restricción,403
+SUS-003,Crear borrador restringido,403
+SUS-004,Funcionalidad distinta,Disponible
+SUS-005,Fin de vigencia,Reactivación automática
+SUS-006,Levantamiento manual,Reactivación
+SUS-007,Consulta histórica,Disponible
+SUS-008,POST sin CSRF,403
+SUS-009,Restricciones superpuestas,Persiste hasta finalizar todas

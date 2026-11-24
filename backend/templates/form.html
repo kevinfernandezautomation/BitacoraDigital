@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<section><h1>{{title|default:'Cambiar contraseña'}}</h1><form method="post" enctype="multipart/form-data">{% csrf_token %}{{form.as_p}}<button>Guardar</button></form></section>{% endblock %}

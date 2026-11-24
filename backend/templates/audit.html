@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<h1>Auditoría · últimos 500 eventos</h1><table><thead><tr><th>Fecha</th><th>Usuario</th><th>Evento</th></tr></thead><tbody>{% for e in events %}<tr><td>{{e.created}}</td><td>{{e.actor}}</td><td>{{e.action}}</td></tr>{% endfor %}</tbody></table>{% endblock %}
